@@ -16,10 +16,15 @@ classifiers = [
     "License :: OSI Approved :: MIT License"
 ]
 dependencies = [
+    "datasets>=5.0.1",
+    "huggingface>=0.0.1",
+    "jupyter>=1.1.1",
     "pip",
     "pytest",
     "python-dotenv",
     "ruff",
+    "torch>=2.14.0",
+    "transformers>=5.17.0",
 ]
 requires-python = "==3.14.6"
 
