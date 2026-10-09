@@ -24,9 +24,7 @@ def load_local_dataset(path: str, split: str | None = None) -> Dataset | Dataset
 
     builder = _SUFFIX_TO_BUILDER.get(local_path.suffix.lower())
     if builder is None:
-        raise ValueError(
-            f"Unsupported local dataset file type: {local_path.suffix!r} ({path})"
-        )
+        raise ValueError(f"Unsupported local dataset file type: {local_path.suffix!r} ({path})")
     dataset = load_dataset(builder, data_files=str(local_path), split=split or "train")
     return dataset
 

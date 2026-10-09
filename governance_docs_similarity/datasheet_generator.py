@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 
 def generate_datasheet(
@@ -19,7 +19,7 @@ def generate_datasheet(
 ) -> str:
     """Generate a datasheet for a dataset following Gebru et al.'s framework."""
 
-    timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    timestamp = datetime.now(UTC).strftime("%Y-%m-%d %H:%M UTC")
 
     feature_table = "| Feature | Type | Description |\n|---------|------|-------------|\n"
     for f in features:
