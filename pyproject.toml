@@ -16,12 +16,22 @@ classifiers = [
     "License :: OSI Approved :: MIT License"
 ]
 dependencies = [
+    "ollama>=0.6.3",
+    "pandas>=3.0.6",
     "pip",
+    "pyarrow>=25.0.1",
     "pytest",
     "python-dotenv",
     "ruff",
+    "scikit-learn>=1.9.1",
+    "sentence-transformers>=6.1.0",
+    "torch>=2.14.0",
+    "typer>=0.27.2",
 ]
 requires-python = "==3.14.6"
+
+[project.scripts]
+gds = "governance_docs_similarity.cli:app"
 
 
 [tool.ruff]

@@ -43,7 +43,7 @@ format:
 ## Run tests
 .PHONY: test
 test:
-	python -m pytest tests
+	uv run python -m pytest tests
 
 
 ## Set up Python interpreter environment
@@ -60,6 +60,16 @@ create_environment:
 #################################################################################
 # PROJECT RULES                                                                 #
 #################################################################################
+
+## Build the AGORA passage embedding index
+.PHONY: index
+index:
+	uv run gds build-index
+
+## Compare a new document with the corpus: make compare DOC=path/to/new.txt [ARGS="--no-llm"]
+.PHONY: compare
+compare:
+	uv run gds compare $(DOC) $(ARGS)
 
 
 
